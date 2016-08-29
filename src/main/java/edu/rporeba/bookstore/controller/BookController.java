@@ -16,6 +16,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -98,7 +99,6 @@ public class BookController {
 
     }
 
-
     @RequestMapping(value = "/search", method = RequestMethod.GET)
     public String getSearchPage(@ModelAttribute("command") BookCommand command) {
 
@@ -110,7 +110,8 @@ public class BookController {
     @ResponseBody
     public List<BookDto> search(@ModelAttribute("command") BookListCommand command, @RequestBody BookSearchParams searchTerm) {
 
-        List<BookDto> bookDto = bookService.findBySearchTerm(searchTerm);
+        List<BookDto> bookDto = new ArrayList<>();
+        bookDto = bookService.findBySearchTerm(searchTerm);
         command.setBookList(bookDto);
         return bookDto;
 

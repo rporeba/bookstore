@@ -83,7 +83,7 @@ public class BookServiceImpl implements BookService {
     public BookDto findByIsbnLike(String isbn) {
 
         //return BookDtoAssembler.toDto(bookRepository.findOne(qbook.isbn.like(isbn)));
-         return BookDtoAssembler.toDto(bookRepository.findOne(qbook.isbn.like("%" + isbn + "%")));
+        return BookDtoAssembler.toDto(bookRepository.findOne(qbook.isbn.like("%" + isbn + "%")));
 
     }
 

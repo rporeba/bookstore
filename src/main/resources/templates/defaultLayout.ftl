@@ -4,7 +4,7 @@
 <#macro masterPage >
 
 <!DOCTYPE html>
-<html class="full" lang="en">
+<html class="full" lang="en" data-ng-app="bookstore">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
@@ -14,6 +14,13 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+
+    <script type="text/javascript" src="bookstore_application.js"></script>
+    <script type="text/javascript" src="bookService.js"></script>
+    <script type="text/javascript" src="bookController.js"></script>
 
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
