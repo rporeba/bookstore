@@ -1,5 +1,6 @@
 <#import "spring.ftl" as spring />
 
+
 <style>
 
     #logout {

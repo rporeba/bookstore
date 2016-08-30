@@ -65,14 +65,14 @@ public class BorrowServiceImpl implements BorrowService {
     }
 
     @Override
-    public void giveBookBack(Long borrowId, Long itemId) {
+    public void giveBookBack(Long borrowId) {
 
         borrowRepository.delete(borrowId);
-        Book book = bookService.findById(itemId);
-        if (book.isBookBorrowed()) {
-            book.setBookBorrowed(false);
-
-        }
+//        Book book = bookService.findById(itemId);
+//        if (book.isBookBorrowed()) {
+//            book.setBookBorrowed(false);
+//
+//        }
 
     }
 

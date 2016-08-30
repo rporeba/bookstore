@@ -15,13 +15,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-    <script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
-
-    <script type="text/javascript" src="bookstore_application.js"></script>
-    <script type="text/javascript" src="bookService.js"></script>
-    <script type="text/javascript" src="bookController.js"></script>
-
     <script type="text/javascript" src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -37,17 +30,17 @@
 
 
 </head>
+
 <body id="home" class="img-responsive">
 
-<div class="container">
-    <div class="jumbotron">
-        <div class="container">
-            <div class="navbar-header"><#include "header.ftl"/></div>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container">
+                <div class="navbar-header"><#include "header.ftl"/></div>
+            </div>
+            <#nested/>
         </div>
-        <#nested/>
     </div>
-</div>
-
 </body>
 
 </html>

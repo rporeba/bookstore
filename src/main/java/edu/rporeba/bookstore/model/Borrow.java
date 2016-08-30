@@ -30,10 +30,9 @@ public class Borrow implements Serializable {
     @JsonIgnoreProperties("item")
     private Item item;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "BORROWER_ID")
     @JsonManagedReference
     private Borrower borrower;
-
 
 }

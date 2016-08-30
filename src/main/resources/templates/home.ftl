@@ -22,6 +22,7 @@
     <button id="deletebook" class="btn btn-danger" type="submit" disabled>Delete</button>
     <button id="editbook" class="btn btn-success custom-width" disabled>Edit</button>
     <button id="bookdetails" class="btn btn-info" disabled>Show Details</button>
+    <a href="/bookstore/borrows" class="btn btn-primary" role="button">Borrows</a>
     <a href="/bookstore/newborrower" class="btn btn-success" role="button">New Borrower</a>
     <a href="/bookstore/search" id="search" class="btn-info btn pull-right" role="button">Search book</a>
 

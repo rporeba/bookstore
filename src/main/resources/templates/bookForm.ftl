@@ -79,8 +79,6 @@
 
 </form>
 
-<link rel="stylesheet" type="text/css" href="style.css"/>
-<script src="script.js"></script>
 </@layout.masterPage>
 
 

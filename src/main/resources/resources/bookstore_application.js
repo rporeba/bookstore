@@ -2,18 +2,15 @@
  * Created by rporeba on 29.08.2016.
  */
 
-'use strict';
-var bookstore = angular.module('bookstore', []);
+var bookstore = angular.module('bookstore', ["ngResource", "ngRoute", "ui.bootstrap", "ui.router", "pascalprecht.translate", "ngMessages"]).run(function ($rootScope) {
 
-/*bookstore.config(['$stateProvider', , function ($stateProvider) {
+    // adds some basic utilities to the $rootScope for debugging purposes
+    $rootScope.log = function (thing) {
+        console.log(thing);
+    };
 
-    $urlRouterProvider.otherwise("/books");
+    $rootScope.alert = function (thing) {
+        alert(thing);
+    };
 
-    $stateProvider
-        .state("books", {
-            url: "/books",   // adres url w przeglądarce
-            templateUrl: "books", //"book.html", //plik
-            controller: "BookController"
-        })
-
-}]);*/
+})
