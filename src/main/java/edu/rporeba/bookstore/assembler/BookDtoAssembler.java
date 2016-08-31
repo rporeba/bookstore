@@ -14,7 +14,7 @@ public class BookDtoAssembler {
 
         bookDto.setItemId(book.getItemId());
         bookDto.setIsbn(book.getIsbn());
-        bookDto.setBookBorrowed(book.isBookBorrowed());
+        //bookDto.setBookBorrowed(book.isBookBorrowed());
         bookDto.setBookTitle(book.getBookTitle());
         bookDto.setTypeOfBook(book.getTypeOfBook());
         bookDto.setNumberOfPage(book.getNumberOfPage());
@@ -38,7 +38,7 @@ public class BookDtoAssembler {
 
         book.setItemId(bookDto.getItemId());
         book.setIsbn(bookDto.getIsbn());
-        book.setBookBorrowed(bookDto.isBookBorrowed());
+        //book.setBookBorrowed(bookDto.isBookBorrowed());
         book.setBookTitle(bookDto.getBookTitle());
         book.setTypeOfBook(bookDto.getTypeOfBook());
         book.setNumberOfPage(bookDto.getNumberOfPage());

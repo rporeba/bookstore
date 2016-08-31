@@ -1,6 +1,5 @@
 package edu.rporeba.bookstore.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
@@ -20,39 +19,30 @@ public class Book extends Item implements Serializable {
 
     private static final long serialVersionUID = -7447877676635026239L;
 
-    @Length(min = 3, max = 20)
     @NotNull
-    @Column(name = "ISBN")
+    @Length(min = 3, max = 20)
     private String isbn;
 
-    @Length(min = 3, max = 20)
     @NotNull
-    @Column(name = "BOOK_TITLE")
-    @JsonProperty("bookTitle")
+    @Length(min = 3, max = 20)
     private String bookTitle;
 
-    @Column(name = "TYPE_OF_BOOK")
     @Enumerated(EnumType.STRING)
     private BookType typeOfBook;
 
     @NotNull
-    @Column(name = "NUMBER_OF_PAGE")
     private Long numberOfPage;
 
-    @Column(name = "PUBLISHED")
-    @DateTimeFormat(pattern = "MM-dd-yyyy")
     @NotNull
+    @DateTimeFormat(pattern = "MM-dd-yyyy")
     private LocalDate published;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "AUTHOR_ID")
+    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinColumn(name = "id")
     private Author author;
 
-    @Column(name = "IS_BOOK_BORROWED")
-    private boolean isBookBorrowed;
-
     public Optional<Borrow> getMaxBorrow() {
-        return getBorrows().stream().reduce((a, b) -> a.getBorrowId() > b.getBorrowId() ? a : b);
+        return getBorrows().stream().reduce((a, b) -> a.getId() > b.getId() ? a : b);
     }
 
 

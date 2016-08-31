@@ -12,7 +12,7 @@ public class BorrowDtoAssembler {
 
 		BorrowDto borrowDto = new BorrowDto();
 
-		borrowDto.setBorrowId(borrow.getBorrowId());
+		borrowDto.setId(borrow.getId());
 		borrowDto.setBorrowDate(borrow.getBorrowDate());
 		borrowDto.setItem(borrow.getItem());
 		borrowDto.setBorrowerDto(BorrowerDtoAssembler.toDto(borrow.getBorrower()));

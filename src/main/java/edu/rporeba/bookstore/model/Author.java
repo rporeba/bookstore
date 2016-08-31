@@ -13,23 +13,20 @@ import java.util.Set;
 @Setter
 @Entity
 @Table(name = "Author")
-public class Author implements Serializable{
+public class Author implements Serializable {
 
     private static final long serialVersionUID = 7456831297727758404L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "AUTHOR_ID")
-    private Long authorId;
+    private Long id;
 
-    @Length(min = 3, max = 20)
     @NotEmpty
-    @Column(name = "FIRST_NAME")
+    @Length(min = 3, max = 20)
     private String firstName;
 
-    @Length(min = 3, max = 20)
     @NotEmpty
-    @Column(name = "LAST_NAME")
+    @Length(min = 3, max = 20)
     private String lastName;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "author")

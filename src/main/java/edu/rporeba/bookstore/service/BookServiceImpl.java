@@ -36,7 +36,9 @@ public class BookServiceImpl implements BookService {
         if (book.getItemId() == null) {
 
             bookRepository.save(book);
+
         } else {
+
             bookRepository.saveAndFlush(book);
         }
 
@@ -82,7 +84,6 @@ public class BookServiceImpl implements BookService {
     @Override
     public BookDto findByIsbnLike(String isbn) {
 
-        //return BookDtoAssembler.toDto(bookRepository.findOne(qbook.isbn.like(isbn)));
         return BookDtoAssembler.toDto(bookRepository.findOne(qbook.isbn.like("%" + isbn + "%")));
 
     }

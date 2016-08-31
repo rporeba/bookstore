@@ -19,7 +19,7 @@
 <#------------------------------------------------------------------------------------------------------------------------>
 
 
-<#macro inputText path attributes="" type="text" title="" name="" id="" >
+<#macro inputText path attributes="" type="" title="" name="" id="" >
 
     <@spring.bind path/>
 

@@ -12,8 +12,9 @@ public class ItemDtoAssembler {
 
         ItemDto itemDto = new ItemDto();
 
-        itemDto.setItemId(item.getItemId());
+        itemDto.setId(item.getItemId());
         itemDto.setBorrows(item.getBorrows());
+        itemDto.setBookBorrowed(item.isBookBorrowed());
 
         return itemDto;
 

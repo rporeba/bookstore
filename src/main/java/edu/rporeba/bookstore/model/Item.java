@@ -1,6 +1,5 @@
 package edu.rporeba.bookstore.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -20,12 +19,11 @@ public class Item implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ITEM_ID")
+    @Column(name = "itemId")
     private Long itemId;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "item", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("item")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "item"/*, cascade = CascadeType.ALL*/)
     private Set<Borrow> borrows;
 
-
+    private boolean isBookBorrowed;
 }

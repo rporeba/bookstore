@@ -1,10 +1,7 @@
 package edu.rporeba.bookstore.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import lombok.Getter;
 import lombok.Setter;
-
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -23,26 +20,22 @@ public class Borrower implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "BORROWER_ID", nullable = false, updatable = false)
+    @Column(name = "borrowerId", nullable = false, updatable = false)
     private Long borrowerId;
 
-    @Size(min = 3, max = 20)
     @NotNull
-    @Column(name = "FIRST_NAME")
+    @Size(min = 3, max = 20)
     private String firstName;
 
-    @Size(min = 3, max = 20)
     @NotNull
-    @Column(name = "LAST_NAME")
+    @Size(min = 3, max = 20)
     private String lastName;
 
     @Valid
-    @Column(name = "HAS_BOOK_BORROWED")
     private Boolean hasBookBorrowed = false;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "borrower", cascade = CascadeType.ALL)
-    @JsonBackReference
-    private Set<Borrow> borrows;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "borrower")
+//    private Set<Borrow> borrows;
 
 
 }

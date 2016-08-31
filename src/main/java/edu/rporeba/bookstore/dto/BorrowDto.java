@@ -13,7 +13,7 @@ public class BorrowDto implements Serializable {
 
     private static final long serialVersionUID = -3917497041001328487L;
 
-    private Long borrowId;
+    private Long id;
 
     private LocalDate borrowDate;
 

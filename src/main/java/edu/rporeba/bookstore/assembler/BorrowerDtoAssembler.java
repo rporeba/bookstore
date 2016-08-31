@@ -30,7 +30,7 @@ public class BorrowerDtoAssembler {
 
 		Borrower borrower = new Borrower();
 
-		borrower.setBorrowerId(borrowerDto.getBorrowerId());
+		borrower.setBorrowerId(borrower.getBorrowerId());
 		borrower.setFirstName(borrowerDto.getFirstName());
 		borrower.setLastName(borrowerDto.getLastName());
 

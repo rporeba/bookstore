@@ -1,10 +1,7 @@
 package edu.rporeba.bookstore.service;
 
 import edu.rporeba.bookstore.assembler.BorrowDtoAssembler;
-import edu.rporeba.bookstore.assembler.BorrowerDtoAssembler;
 import edu.rporeba.bookstore.dto.BorrowDto;
-import edu.rporeba.bookstore.dto.BorrowDto;
-import edu.rporeba.bookstore.dto.BorrowerDto;
 import edu.rporeba.bookstore.model.Book;
 import edu.rporeba.bookstore.model.Borrow;
 import edu.rporeba.bookstore.model.Borrower;
@@ -44,7 +41,6 @@ public class BorrowServiceImpl implements BorrowService {
     @Override
     public void borrowBook(Long itemId, Long borrowerId) {
 
-
         Book book = bookService.findById(itemId);
         Borrower borrower = borrowerService.findById(borrowerId);
 
@@ -57,6 +53,7 @@ public class BorrowServiceImpl implements BorrowService {
             throw new BookAlreadyBorrowedException(borrower.getFirstName());
 
         } else {
+
             saveBorrowBook(borrow);
             book.setBookBorrowed(true);
 
@@ -65,12 +62,16 @@ public class BorrowServiceImpl implements BorrowService {
     }
 
     @Override
-    public void giveBookBack(Long borrowId) {
+    public void giveBookBack(Long id) {
 
-        borrowRepository.delete(borrowId);
-//        Book book = bookService.findById(itemId);
-//        if (book.isBookBorrowed()) {
-//            book.setBookBorrowed(false);
+        Borrow borrow = borrowRepository.findOne(id);
+        borrowRepository.delete(borrow);
+
+//        borrow.getItem().setBookBorrowed(false);
+//
+//        if (borrow.getItem().isBookBorrowed() == false) {
+//
+//            borrowRepository.delete(borrow);
 //
 //        }
 

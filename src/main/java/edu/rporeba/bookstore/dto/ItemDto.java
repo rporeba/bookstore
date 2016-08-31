@@ -13,9 +13,9 @@ public class ItemDto implements Serializable {
 
     private static final long serialVersionUID = -5150563725536767167L;
 
-    private Long itemId;
+    private Long id;
 
     private Set<Borrow> borrows;
 
-
+    private boolean isBookBorrowed;
 }

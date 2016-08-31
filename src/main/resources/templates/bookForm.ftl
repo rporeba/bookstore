@@ -40,9 +40,7 @@
         <h2>Book form</h2>
     </div>
 
-    <@label messageKey="command.bookDto.itemId" id="itemId">
-        <@inputText path="command.bookDto.itemId" attributes="" title="We ask you to insert the book ID (optionaly)" name="itemId" type="text"/>
-    </@label>
+    <@inputText path="command.bookDto.itemId" attributes="" title="We ask you to insert the book ID (optionaly)" name="itemId" type="hidden" />
 
     <@label messageKey="command.bookDto.bookTitle" id="bookTitle">
         <@inputText path="command.bookDto.bookTitle" attributes=""  title="We ask you to insert the title of book"  name="bookTitle" id="bookTitle" type="text"  />

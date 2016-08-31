@@ -37,8 +37,8 @@ public class BookDto implements Serializable {
     @NotNull
     private LocalDate published;
 
-    @Valid
-    private boolean isBookBorrowed;
+//    @Valid
+//    private boolean isBookBorrowed;
 
     @Valid
     private AuthorDto authorDto;

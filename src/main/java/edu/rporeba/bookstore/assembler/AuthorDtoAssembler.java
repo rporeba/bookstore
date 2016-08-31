@@ -13,7 +13,7 @@ public class AuthorDtoAssembler {
 
 		AuthorDto authorDto = new AuthorDto();
 
-		authorDto.setAuthorId(author.getAuthorId());
+		authorDto.setId(author.getId());
 		authorDto.setFirstName(author.getFirstName());
 		authorDto.setLastName(author.getLastName());
 
@@ -31,7 +31,7 @@ public class AuthorDtoAssembler {
 
 		Author author = new Author();
 
-		author.setAuthorId(authorDto.getAuthorId());
+		author.setId(authorDto.getId());
 		author.setFirstName(authorDto.getFirstName());
 		author.setLastName(authorDto.getLastName());
 

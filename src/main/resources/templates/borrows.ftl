@@ -36,7 +36,7 @@
             $(function () {
 
                 $.post("/bookstore/returnBook",
-                        {borrowId: selectedBorrowId},
+                        {id: selectedBorrowId},
                         function () {
                             location.reload();
                         });

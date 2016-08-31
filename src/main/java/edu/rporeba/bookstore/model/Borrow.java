@@ -1,7 +1,5 @@
 package edu.rporeba.bookstore.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,20 +17,17 @@ public class Borrow implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "BORROW_ID")
-    private Long borrowId;
+    @Column(name = "id")
+    private Long id;
 
-    @Column(name = "BORROW_DATE")
     private LocalDate borrowDate;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "ITEM_ID")
-    @JsonIgnoreProperties("item")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "itemId")
     private Item item;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "BORROWER_ID")
-    @JsonManagedReference
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "borrowerId")
     private Borrower borrower;
 
 }

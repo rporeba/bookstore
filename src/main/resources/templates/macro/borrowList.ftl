@@ -14,8 +14,8 @@
         <tbody id="bookList">
             <#list borrows as borrow>
             <tr>
-                <td><input class="selectedBorrow" type="radio" value="${borrow.borrowId}" name="borrowId"/></td>
-                <td>${borrow.borrowId}</td>
+                <td><input class="selectedBorrow" type="radio" value="${borrow.id}" name="id"/></td>
+                <td>${borrow.id}</td>
                 <td>${borrow.borrowerDto.firstName}</td>
                 <td>${borrow.borrowerDto.lastName}</td>
 <#--                <td>${borrow.bookDto.bookTitle}</td>-->

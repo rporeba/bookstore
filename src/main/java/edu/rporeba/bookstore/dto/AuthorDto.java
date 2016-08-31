@@ -14,7 +14,7 @@ public class AuthorDto implements Serializable {
 
     private static final long serialVersionUID = 5619903210184189718L;
 
-    private Long authorId;
+    private Long id;
 
     @NotNull
     @Length(min = 3, max = 20)

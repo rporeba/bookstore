@@ -8,7 +8,9 @@ bookstore.controller('HomeController', function ($scope, $translate, $uibModal, 
     $scope.books = BookService.getBooks();
 
     BookService.getColumns().then(function (response) {
+
         $scope.columns = response;
+
     });
 
     $scope.selectedBook = {};
@@ -19,6 +21,7 @@ bookstore.controller('HomeController', function ($scope, $translate, $uibModal, 
         BookService.deleteBook(selectedBookId);
         $scope.selectedBook = {};
         $scope.books = BookService.getBooks();
+
     };
 
 });
