@@ -22,7 +22,7 @@ public class Item implements Serializable {
     @Column(name = "itemId")
     private Long itemId;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "item"/*, cascade = CascadeType.ALL*/)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "item", cascade = CascadeType.ALL)
     private Set<Borrow> borrows;
 
     private boolean isBookBorrowed;

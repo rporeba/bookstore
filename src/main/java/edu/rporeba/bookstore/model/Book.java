@@ -45,5 +45,4 @@ public class Book extends Item implements Serializable {
         return getBorrows().stream().reduce((a, b) -> a.getId() > b.getId() ? a : b);
     }
 
-
 }

@@ -110,7 +110,7 @@ public class BookController {
     @ResponseBody
     public List<BookDto> search(@ModelAttribute("command") BookListCommand command, @RequestBody BookSearchParams searchTerm) {
 
-        List<BookDto> bookDto = new ArrayList<>();
+        List<BookDto> bookDto;
         bookDto = bookService.findBySearchTerm(searchTerm);
         command.setBookList(bookDto);
         return bookDto;

@@ -30,15 +30,12 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book saveBook(BookDto bookDto) {
-
         Book book = BookDtoAssembler.toEntity(bookDto);
 
         if (book.getItemId() == null) {
-
             bookRepository.save(book);
 
         } else {
-
             bookRepository.saveAndFlush(book);
         }
 
@@ -47,7 +44,6 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public List<BookDto> findAll() {
-
         List<Book> books = bookRepository.findAll();
         List<BookDto> bookDtoList = BookDtoAssembler.dtoList(books);
 
@@ -57,7 +53,6 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookDto findByBookId(Long id) {
-
         Book book = bookRepository.findOne(id);
         BookDto bookDto = BookDtoAssembler.toDto(book);
 
@@ -67,7 +62,6 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public void deleteBookById(Long id) {
-
         Book book = bookRepository.findOne(id);
         bookRepository.delete(book);
 
@@ -75,7 +69,6 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book findById(Long id) {
-
         Book book = bookRepository.findOne(id);
         return book;
 
@@ -83,14 +76,12 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookDto findByIsbnLike(String isbn) {
-
         return BookDtoAssembler.toDto(bookRepository.findOne(qbook.isbn.like("%" + isbn + "%")));
 
     }
 
     @Override
     public BookDto findByBookTitleLike(String bookTitle) {
-
         return BookDtoAssembler.toDto(bookRepository.findOne(qbook.bookTitle.like("%" + bookTitle + "%")));
     }
 
