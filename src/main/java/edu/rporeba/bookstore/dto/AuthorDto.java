@@ -24,5 +24,4 @@ public class AuthorDto implements Serializable {
     @Length(min = 3, max = 20)
     private String lastName;
 
-
 }
