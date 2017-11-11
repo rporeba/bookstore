@@ -10,6 +10,7 @@ import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import net.sf.jasperreports.export.SimpleXlsExporterConfiguration;
 import net.sf.jasperreports.export.SimpleXlsReportConfiguration;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ import java.util.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Ignore
 public class BookstoreApplicationTests {
 
     @Autowired
